@@ -89,7 +89,14 @@ export const PokemonProvider = ({children}) => {
          allPokemon,
          globalPokemon,
          getPokemonByID,
-         OnclickLoadMore
+         OnclickLoadMore,
+        //  componente Loader
+         loading,
+         setLoading,
+        //  Boton filter
+         active,
+         setActive
+        //  Filtar checkbox container
     }}>
         {children}
     </PokemonContext.Provider>
