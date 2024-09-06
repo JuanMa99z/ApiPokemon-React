@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 export const CardPokemon = ({ pokemon }) => {
@@ -18,7 +18,6 @@ export const CardPokemon = ({ pokemon }) => {
 						<span key={type.type.name} className={type.type.name}>
 							{type.type.name}
 						</span>
-						
 					))}
 				</div>
 			</div>
