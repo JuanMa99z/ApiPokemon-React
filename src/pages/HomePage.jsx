@@ -3,7 +3,7 @@ import { FilterBar, PokemonList } from "../components";
 import { PokemonContext } from "../context/PokemonContext";
 
 export const HomePage = () => {
-  const { onClickLoadMore, active, setActive } = useContext(PokemonContext);
+  const { OnclickLoadMore, active, setActive } = useContext(PokemonContext);
   return (
     <>
       <div className="container-filter container">
@@ -28,7 +28,7 @@ export const HomePage = () => {
       <PokemonList />
       <FilterBar />
       <div className="container-btn-load-more container">
-        <button className="btn-load-more" onClick={onClickLoadMore}>
+        <button className="btn-load-more" onClick={OnclickLoadMore}>
           Cargar +
         </button>
       </div>
