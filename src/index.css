@@ -107,28 +107,42 @@ header form {
 /* Btn Filter */
 .container-filter {
 	display: flex;
+	justify-content: center;
+	color: #fff;
+	
+
 }
 
 .icon-filter {
 	display: flex;
 	align-items: center;
 	gap: 15px;
-
 	margin-bottom: 20px;
 	cursor: pointer;
+	background-color: var(--color-primary);
+	border: none;
+	outline: none;
+	border-radius: 25px;
+	padding: 10px 20px;
+	font-family: inherit;
+	cursor: pointer;
+}
+.icon-filter:hover {
+	background-color: var(--color-primary-hover);
+	color: #000;
 }
 
 .icon-filter .icon {
 	width: 30px;
 	height: 30px;
-	stroke: #555;
+	stroke: #fff;
 }
 
 /* Card List Pokemon */
 .card-list-pokemon {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	gap: 20px;
+	gap: 25px;
 }
 
 .card-pokemon {
@@ -137,13 +151,12 @@ header form {
 }
 
 .card-img {
-	background-color: #f2f2f2;
-
+	background: linear-gradient(15deg, rgb(56, 145, 119) 5%, rgba(255,255,255,1) 85%);
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border-radius: 5px;
-	height: 250px;
+	border-radius: 10px;
+	height: 240px;
 }
 
 .card-img img {
@@ -161,7 +174,7 @@ header form {
 
 .pokemon-id {
 	display: block;
-	color: #888;
+	color: #333;
 	margin-bottom: 15px;
 }
 
