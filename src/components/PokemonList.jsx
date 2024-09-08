@@ -11,7 +11,7 @@ export const PokemonList = () => {
       {loading ? (
         <Loader />
       ) : (
-        <div className="card-list-pokemon cointainer">
+        <div className='card-list-pokemon'>
           {allPokemon.map((pokemon) => (
             <CardPokemon pokemon={pokemon} key={pokemon.id} />
           ))}

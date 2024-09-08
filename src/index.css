@@ -34,11 +34,14 @@
 
 body {
 	font-family: 'Montserrat';
+	background: linear-gradient(0deg, rgb(255, 255, 241) 20%, rgb(255, 228, 203) 100%);
 }
 /* Globales */
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
+	box-sizing: border-box;
+	padding: 0 auto;
 }
 
 /* Header */
@@ -47,11 +50,34 @@ header {
 	align-items: center;
 	justify-content: space-between;
 
-	padding: 40px 0;
+	padding: 25px 0;
 }
+@media (max-width: 768px) {
+	header {
+		display: flex;
+		align-items: center;
+	}
+}
+@media (max-width: 480px) {
+	header {
+		display: grid;
+		align-items: center;
+	}
+}
+
 
 .logo img {
 	width: 150px;
+}
+@media (max-width: 768px) {
+	.logo img{
+		width: 150px;
+	}
+}
+@media (max-width: 480px) {
+	.logo img {
+		width: 100%;
+	}
 }
 
 header form {
@@ -78,6 +104,7 @@ header form {
 	border: none;
 	outline: none;
 	font-size: 15px;
+	background-color:  rgb(255, 228, 203);
 }
 
 .icon-search {
@@ -90,7 +117,7 @@ header form {
 	border: none;
 	outline: none;
 	border-radius: 25px;
-	padding: 15px 30px;
+	padding: 15px 32px;
 	font-family: inherit;
 	color: #fff;
 	background-color: var(--color-primary);
@@ -145,23 +172,43 @@ header form {
 	gap: 25px;
 }
 
+/* Tablet como el iPad (768px a 1024px) */
+@media (max-width: 1024px) {
+	.card-list-pokemon {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* Samsung S20 (resolución de pantalla 1440x3200, pero el viewport es de 360px) */
+@media (max-width: 768px) {
+	.card-list-pokemon {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+/* Teléfonos más pequeños o en modo móvil (iPhone) */
+@media (max-width: 480px) {
+	.card-list-pokemon {
+		grid-template-columns: 1fr;
+		justify-content: center;
+	}
+}
 .card-pokemon {
 	cursor: pointer;
 	text-decoration: none;
 }
 
 .card-img {
-	background: linear-gradient(15deg, rgb(56, 145, 119) 5%, rgba(255,255,255,1) 85%);
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	border-radius: 10px;
 	height: 240px;
 }
 
 .card-img img {
 	width: 100%;
 	height: 100%;
+	filter:drop-shadow(8px 2px 8px rgba(0, 0, 0, 0.5));
 }
 
 .card-info {
@@ -170,12 +217,15 @@ header form {
 
 .card-info h3 {
 	color: #333;
+	font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .pokemon-id {
 	display: block;
 	color: #333;
-	margin-bottom: 15px;
+	margin-bottom: 10px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight: 600;
 }
 
 .card-types {
@@ -187,7 +237,7 @@ header form {
 .card-types span {
 	font-size: 12px;
 	padding: 5px 20px;
-	border-radius: 5px;
+	border-radius:10px;
 	color: #fff;
 }
 
@@ -333,19 +383,19 @@ Styles of Pokemon Single Page
 
 .number-pokemon {
 	position: absolute;
-	top: -130px;
+	top: -150px;
 	left: 0;
 
 	font-size: 200px;
-	font-weight: 700;
+	font-weight: 600;
 	color: var(--color-primary-hover);
 }
 
 .container-img-pokemon {
 	order: 2;
-	flex: 1;
+	flex: 1.5;
 	padding: 25px 25px 25px 0;
-	height: 400px;
+	height: 350px;
 }
 
 .container-img-pokemon img {
@@ -362,8 +412,10 @@ Styles of Pokemon Single Page
 }
 
 .container-info-pokemon h1 {
-	text-align: right;
-	font-size: 60px;
+	text-align: left;
+	margin-top: 10%;
+	margin-bottom: 5%;
+	font-size: 70px;
 }
 
 .info-pokemon {
@@ -376,17 +428,19 @@ Styles of Pokemon Single Page
 .group-info{
 	display: flex;
 	flex-direction: column;
-	gap: 10px;
+	gap: 15px;
 }
 
 .group-info p {
 	font-weight: 700;
 	font-size: 20px;
+	color: var(--color-primary);
+
 }
 
 /* Stats */
 .container-stats {
-	display: flex;
+	display: grid;
 	gap: 20px;
 	align-items: center;
 }
@@ -405,16 +459,15 @@ Styles of Pokemon Single Page
 }
 
 .stat-group span {
-	flex: 20%;
-	font-weight: 500;
-	font-size: 18px;
+	flex: 15%;
+	font-weight: 600;
+	font-size: 20px;
 }
+  
 
 .progress-bar {
-	width: 100%;
-	height: 20px;
-	background-color: var(--color-primary);
-	border-radius: 15px;
+	height: auto;
+	border-radius: 10px;
 }
 /* Search Page */
 
