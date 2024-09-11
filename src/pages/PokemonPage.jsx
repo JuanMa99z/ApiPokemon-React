@@ -33,23 +33,23 @@ export const PokemonPage = () => {
         <>
           <div className='header-main-pokemon'>
             <span className='number-pokemon'>#{pokemon.id}</span>
-            <div className='container-img-pokemon'>
+            <div className='container-img-pokemon col-lg-6 col-md-6 col-sm-7'>
               <img
                 src={pokemon.sprites.other.dream_world.front_default}
                 alt={`Pokemon ${pokemon?.name}`}
               />
             </div>
 
-            <div className='container-info-pokemon'>
+            <div className='container-info-pokemon col-lg-5 col-md-6 col-sm-7'>
               <h1>{primerMayuscula(pokemon.name)}</h1>
-              <div className='card-types info-pokemon-type'>
+              <div className='card-types info-pokemon-type '>
                 {pokemon.types.map((type) => (
                   <span key={type.type.name} className={`${type.type.name}`}>
                     {type.type.name}
                   </span>
                 ))}
               </div>
-              <div className='info-pokemon'>
+              <div className='info-pokemon col-lg-12 col-md-10 col-sm-9'>
                 <div className='group-info'>
                   <p>Altura</p>
                   <span>{pokemon.height}</span>
@@ -62,7 +62,7 @@ export const PokemonPage = () => {
             </div>
           </div>
 
-          <div className='container-stats'>
+          <div className='container-stats col-lg-12 col-md-12 col-sm-12'>
             <h1>Estadísticas</h1>
             <div className='stats'>
               {pokemon.stats.map((stat, index) => (

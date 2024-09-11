@@ -40,3 +40,30 @@
 .read-the-docs {
   color: #888;
 }
+
+.icon-filter {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.icon-filter svg {
+  margin-right: 8px;
+}
+
+/* Estilo cuando el botón sigue el scroll */
+.fixed-filter {
+  position: fixed;
+  top: 20px;
+  right: 20px; /* Ajusta según tus necesidades */
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container-filter {
+  position: relative; /* Mantiene la estructura en el flujo normal */
+}
