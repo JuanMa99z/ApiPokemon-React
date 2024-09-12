@@ -10,6 +10,7 @@ export const PokemonPage = () => {
   const [pokemon, setPokemon] = useState({});
   const { id } = useParams();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const fetchPokemon = async (id) => {
     const data = await getPokemonByID(id);
     setPokemon(data);
@@ -18,7 +19,7 @@ export const PokemonPage = () => {
 
   useEffect(() => {
     fetchPokemon(id);
-  }, [id]);
+  }, [fetchPokemon, id]);
 
   const getStatPercentage = (statValue) => {
     const maxStat = 100; // Valor máximo posible para un stat
@@ -31,12 +32,15 @@ export const PokemonPage = () => {
         <Loader />
       ) : (
         <>
-        <div className="video-background">
-        <video autoPlay loop muted>
-          <source src="/src/assets/PokemonBackground-2.webm" type="video/webm" />
-        </video>
-        <div className="gradient-overlay"></div>
-      </div>
+          <div className="video-background">
+            <video autoPlay loop muted>
+              <source
+                src="/src/assets/PokemonBackground-2.webm"
+                type="video/webm"
+              />
+            </video>
+            <div className="gradient-overlay"></div>
+          </div>
           <div className="header-main-pokemon">
             <span className="number-pokemon">#{pokemon.id}</span>
             <div className="container-img-pokemon col-lg-6 col-md-6 col-sm-7">
@@ -58,11 +62,16 @@ export const PokemonPage = () => {
               <div className="info-pokemon col-lg-12 col-md-10 col-sm-9">
                 <div className="group-info">
                   <p>Altura</p>
-                  <span>{pokemon.height}</span>
+                  <span>{(pokemon.height / 10).toLocaleString()} m</span>
+                </div>
+                <div className="group-info">
+                  <p>Habilidad</p>
+                  <span>{pokemon.abilities[0].ability.name}</span>
+                  <span>{pokemon.abilities[1].ability.name}</span>
                 </div>
                 <div className="group-info">
                   <p>Peso</p>
-                  <span>{pokemon.weight}KG</span>
+                  <span>{(pokemon.weight / 10).toLocaleString()} kg</span>
                 </div>
               </div>
             </div>
@@ -80,7 +89,7 @@ export const PokemonPage = () => {
                       width: "100%",
                       height: "1.4rem",
                       margin: "0.4rem 0",
-                      background: "inherit"
+                      background: "inherit",
                     }}
                   >
                     <div

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { PokemonContext } from "./PokemonContext";
 import { useForm } from "../hook/useForm";
 
+// eslint-disable-next-line react/prop-types
 export const PokemonProvider = ({ children }) => {
   const [allPokemon, setAllPokemon] = useState([]);
   const [globalPokemon, setGlobalPokemon] = useState([]);
@@ -40,7 +41,7 @@ export const PokemonProvider = ({ children }) => {
   const getGlobalPokemons = async () => {
     const URLbase = "https://pokeapi.co/api/v2/";
 
-    const res = await fetch(`${URLbase}pokemon?limit=400&offset=0`);
+    const res = await fetch(`${URLbase}pokemon?limit=500&offset=0`);
     const data = await res.json();
 
     const promises = data.results.map(async (pokemon) => {
