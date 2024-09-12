@@ -9,7 +9,7 @@ export const PokemonProvider = ({ children }) => {
 
   //UseForm para extrae
   const { valueSearch, onInputChange, onResetForm } = useForm({
-    valueSearch: '',
+    valueSearch: "",
   });
 
   //Estados Simples
@@ -18,7 +18,7 @@ export const PokemonProvider = ({ children }) => {
 
   //llamar pokemones a la api
   const getAllPokemon = async (limit = 20) => {
-    const URLbase = 'https://pokeapi.co/api/v2/'
+    const URLbase = "https://pokeapi.co/api/v2/";
 
     const res = await fetch(
       `${URLbase}pokemon?limit=${limit}&offset=${offset}`
@@ -38,9 +38,9 @@ export const PokemonProvider = ({ children }) => {
 
   // Pokemon llamar a todos los pokemones
   const getGlobalPokemons = async () => {
-    const URLbase = 'https://pokeapi.co/api/v2/';
+    const URLbase = "https://pokeapi.co/api/v2/";
 
-    const res = await fetch(`${URLbase}pokemon?limit=10000&offset=0`);
+    const res = await fetch(`${URLbase}pokemon?limit=400&offset=0`);
     const data = await res.json();
 
     const promises = data.results.map(async (pokemon) => {
@@ -56,7 +56,7 @@ export const PokemonProvider = ({ children }) => {
 
   //llamar pokemon por ID
   const getPokemonByID = async (id) => {
-    const URLbase = 'https://pokeapi.co/api/v2/';
+    const URLbase = "https://pokeapi.co/api/v2/";
 
     const res = await fetch(`${URLbase}pokemon/${id}`);
     const data = await res.json();
@@ -73,56 +73,55 @@ export const PokemonProvider = ({ children }) => {
 
   // boton para cargar mas
   const OnclickLoadMore = () => {
-    setOffset(offset + 10)
-  }
-
-// filter function + state
-const [filteredPokemon, setFilteredPokemon] = useState([]);
-const [typeSelected, setTypeSelected] = useState({
-  grass: false,
-  normal: false,
-  fighting: false,
-  flying: false,
-  poison: false,
-  ground: false,
-  rock: false,
-  bug: false,
-  ghost: false,
-  steel: false,
-  fire: false,
-  water: false,
-  electric: false,
-  psychic: false,
-  ice: false,
-  dragon: false,
-  dark: false,
-  fairy: false,
-  unknow: false,
-  shadow: false,
-});
-
-const handleCheckbox = (e) => {
-  const { name, checked } = e.target;
-
-  setTypeSelected({
-    ...typeSelected,
-    [name]: checked,
+    setOffset(offset + 20);
+  };
+  // filter function + state
+  const [filteredPokemon, setFilteredPokemon] = useState([]);
+  const [typeSelected, setTypeSelected] = useState({
+    grass: false,
+    normal: false,
+    fighting: false,
+    flying: false,
+    poison: false,
+    ground: false,
+    rock: false,
+    bug: false,
+    ghost: false,
+    steel: false,
+    fire: false,
+    water: false,
+    electric: false,
+    psychic: false,
+    ice: false,
+    dragon: false,
+    dark: false,
+    fairy: false,
+    unknow: false,
+    shadow: false,
   });
 
-  // Filtrar todos los Pokémon basados en los filtros activos
-  const activeFilters = {
-    ...typeSelected,
-    [name]: checked,
+  const handleCheckbox = (e) => {
+    const { name, checked } = e.target;
+
+    setTypeSelected({
+      ...typeSelected,
+      [name]: checked,
+    });
+
+    // Filtrar todos los Pokémon basados en los filtros activos
+    const activeFilters = {
+      ...typeSelected,
+      [name]: checked,
+    };
+
+    const filteredResults = globalPokemon.filter((pokemon) =>
+      // Verificar si el Pokémon tiene al menos un tipo seleccionado
+      pokemon.types.some((type) => activeFilters[type.type.name])
+    );
+
+    // Actualizar la lista con los Pokémon filtrados
+    setFilteredPokemon(filteredResults);
   };
-
-  const filteredResults = globalPokemon.filter(pokemon =>
-    // Verificar si el Pokémon tiene al menos un tipo seleccionado
-    pokemon.types.some(type => activeFilters[type.type.name])
-  );
-
-  // Actualizar la lista con los Pokémon filtrados
-  setFilteredPokemon(filteredResults);
-};
 
   return (
     <PokemonContext.Provider
@@ -142,7 +141,7 @@ const handleCheckbox = (e) => {
         setActive,
         //  Filtar checkbox container
         handleCheckbox,
-        filteredPokemon
+        filteredPokemon,
       }}
     >
       {children}

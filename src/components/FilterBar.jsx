@@ -5,7 +5,6 @@ export const FilterBar = () => {
   const { active, handleCheckbox } = useContext(PokemonContext);
 
   return (
-
     <div className={`container-filters ${active ? "active" : ""}`}>
       <div className="filter-by-type">
         <span>Tipo</span>
