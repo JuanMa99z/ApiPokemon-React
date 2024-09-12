@@ -13,11 +13,19 @@ export const SearchPage = () => {
   );
 
   return (
+    
     <div className="container">
+    <div className="video-background">
+        <video autoPlay loop muted>
+          <source src="/src/assets/background-pokemon.webm" type="video/webm" />
+        </video>
+        <div className="gradient-overlay"></div>
+      </div>
+
       <p className="p-search">
         se encontraron <span>{filteredPokemon.length}</span> resultados:
       </p>
-      <div className="card-list-pokemon.container">
+      <div className="card-list-pokemon">
         {filteredPokemon.map((pokemon) => (
           <CardPokemon pokemon={pokemon} key={pokemon.id} />
         ))}

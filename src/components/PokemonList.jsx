@@ -11,7 +11,7 @@ export const PokemonList = () => {
       {loading ? (
         <Loader />
       ) : (
-        <div className="card-list-pokemon">
+        <div className="card-list-pokemon container">
           {filteredPokemon.length ? (
             <>
               {filteredPokemon.map((pokemon) => (
