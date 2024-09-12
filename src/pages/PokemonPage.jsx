@@ -31,6 +31,12 @@ export const PokemonPage = () => {
         <Loader />
       ) : (
         <>
+        <div className="video-background">
+        <video autoPlay loop muted>
+          <source src="/src/assets/PokemonBackground-2.webm" type="video/webm" />
+        </video>
+        <div className="gradient-overlay"></div>
+      </div>
           <div className="header-main-pokemon">
             <span className="number-pokemon">#{pokemon.id}</span>
             <div className="container-img-pokemon col-lg-6 col-md-6 col-sm-7">
@@ -74,6 +80,7 @@ export const PokemonPage = () => {
                       width: "100%",
                       height: "1.4rem",
                       margin: "0.4rem 0",
+                      background: "inherit"
                     }}
                   >
                     <div

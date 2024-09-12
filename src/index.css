@@ -2,7 +2,7 @@
 
 :root {
 	--color-fire: #ff7402;
-	--color-grass: #9bcc50;
+	--color-grass: #329b02;
 	--color-steel: #9eb7b8;
 	--color-water: #4592c4;
 	--color-psychic: #f366b9;
@@ -15,15 +15,15 @@
 	--color-rock: #a38c21;
 	--color-fighting: #d56723;
 	--color-dark: #707070;
-	--color-bug: #729f3f;
+	--color-bug: #7dad45;
 	--color-dragon: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
 	--color-electric: #bba909;
 	--color-fairy: #fdb9e9;
 	--color-shadow: #7b62a3;
 	--color-unknow: #757575;
 
-	--color-primary: #005261;
-	--color-primary-hover: #64bbb2;
+	--color-primary: #005f70;
+	--color-primary-hover: #5bbeb5;
 }
 
 * {
@@ -34,7 +34,7 @@
 
 body {
 	font-family: 'Montserrat';
-	background: linear-gradient(0deg, rgb(255, 255, 241) 40%, rgb(255, 215, 203) 70%);
+	background: black;
 }
 /* Globales */
 .container {
@@ -65,10 +65,10 @@ body {
 	bottom: 0;
 	left: 0;
 	width: 100%;
-	height: 150%; /* Ajusta según prefieras */
-	background: linear-gradient(transparent, rgba(15, 15, 15, 0.95)); /* Degradado */
-	backdrop-filter: blur(0.25rem);
-	-webkit-backdrop-filter: blur(0.25rem);
+	height: 100%; /* Ajusta según prefieras */
+	background: linear-gradient(transparent, rgba(22, 22, 22, 0.95)); /* Degradado */
+	backdrop-filter: blur(0.18rem);
+	-webkit-backdrop-filter: blur(0.18rem);
 	z-index: 1;
   }
   
@@ -310,10 +310,11 @@ header form {
 }
 
 .card-types span {
-	font-size: 12px;
-	padding: 5px 20px;
+	font-size: 14px;
+	padding: 1px 20px;
 	border-radius:10px;
-	color: #fff;
+	font-weight: 600;
+	color:rgb(230, 230, 230);
 }
 
 @media (max-width: 480px) {
@@ -431,10 +432,10 @@ header form {
 	position: fixed;
 	top: 0;
 	left: -300px;
-	width: 200px;
+	width: 220px;
 	color: #000000;
-	background:#5fd4bb45;
-	box-shadow:  2px 0 50px 1px #525151;
+	background:#b7d6a955;
+	box-shadow:  2px 0 50px 1px #575454;
 	height: auto;
 	transition: all 0.3s linear;
 	backdrop-filter: blur(0.4rem);
@@ -592,6 +593,7 @@ Styles of Pokemon Single Page
 	margin-top: 10%;
 	margin-bottom: 5%;
 	font-size: 70px;
+	color:rgb(214, 214, 214);
 }
 
 
@@ -623,13 +625,16 @@ Styles of Pokemon Single Page
 .group-info{
 	display: flex;
 	flex-direction: column;
+	font-weight: 600;
 	gap: 15px;
+	color: var(--color-primary-hover);
+	
 }
 
 .group-info p {
 	font-weight: 700;
 	font-size: 20px;
-	color: var(--color-primary);
+	color:rgb(214, 214, 214);
 
 }
 
@@ -638,6 +643,10 @@ Styles of Pokemon Single Page
 	display: grid;
 	gap: 20px;
 	align-items: center;
+	color: var(--color-primary-hover);
+}
+.container-stats h1{
+	color:rgb(214, 214, 214);
 }
 
 .stats {
@@ -669,10 +678,12 @@ Styles of Pokemon Single Page
 .p-search{
 	margin-bottom: 30px;
 	font-size: 22px;
+	color: var(--color-primary-hover);
 }
 
 .p-search span{
 	font-weight: 700;
+	color: #ffffff;
 }
 
 /* Loader */
