@@ -20,11 +20,11 @@ export const Navigation = () => {
 
   return (
     <>
-      <header className="container">
-        <div className="col-lg-2 col-md-4">
+      <header className="container gap-3">
+        <div className="col-lg-2 col-md-4 col-sm-4">
           <Link to="/" className="logo">
             <img
-              src="https://archives.bulbagarden.net/media/upload/4/4b/Pok%C3%A9dex_logo.png"
+              src="https://raw.githubusercontent.com/sleduardo20/pokedex/0671af442dff1d8f7141e49eb83b438885bbc9e9/public/img/logo.svg"
               alt="Logo Pokedex"
             />
           </Link>
