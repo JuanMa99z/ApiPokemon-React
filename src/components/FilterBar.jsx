@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { PokemonContext } from "../context/PokemonContext";
 
 export const FilterBar = () => {
-  const { active } = useContext(PokemonContext);
+  const { active, handleCheckbox } = useContext(PokemonContext);
 
   return (
 
@@ -12,7 +12,7 @@ export const FilterBar = () => {
         <div className="group-type">
           <input
             type="checkbox"
-            // onChange={handleCheckbox}
+            onChange={handleCheckbox}
             name="grass"
             id="grass"
           />
@@ -21,7 +21,7 @@ export const FilterBar = () => {
         <div className="group-type">
           <input
             type="checkbox"
-            // onChange={handleCheckbox}
+            onChange={handleCheckbox}
             name="fire"
             id="fire"
           />
@@ -30,7 +30,7 @@ export const FilterBar = () => {
         <div className="group-type">
           <input
             type="checkbox"
-            // onChange={handleCheckbox}
+            onChange={handleCheckbox}
             name="bug"
             id="bug"
           />
@@ -39,7 +39,7 @@ export const FilterBar = () => {
         <div className="group-type">
           <input
             type="checkbox"
-            // onChange={handleCheckbox}
+            onChange={handleCheckbox}
             name="fairy"
             id="fairy"
           />
@@ -48,7 +48,7 @@ export const FilterBar = () => {
         <div className="group-type">
           <input
             type="checkbox"
-            // onChange={handleCheckbox}
+            onChange={handleCheckbox}
             name="dragon"
             id="dragon"
           />
@@ -57,7 +57,7 @@ export const FilterBar = () => {
         <div className="group-type">
           <input
             type="checkbox"
-            // onChange={handleCheckbox}
+            onChange={handleCheckbox}
             name="shadow"
             id="shadow"
           />
@@ -66,7 +66,7 @@ export const FilterBar = () => {
         <div className="group-type">
           <input
             type="checkbox"
-            // onChange={handleCheckbox}
+            onChange={handleCheckbox}
             name="ground"
             id="ground"
           />
@@ -75,7 +75,7 @@ export const FilterBar = () => {
         <div className="group-type">
           <input
             type="checkbox"
-            // onChange={handleCheckbox}
+            onChange={handleCheckbox}
             name="normal"
             id="normal"
           />
@@ -84,7 +84,7 @@ export const FilterBar = () => {
         <div className="group-type">
           <input
             type="checkbox"
-            // onChange={handleCheckbox}
+            onChange={handleCheckbox}
             name="psychic"
             id="psychic"
           />
@@ -93,7 +93,7 @@ export const FilterBar = () => {
         <div className="group-type">
           <input
             type="checkbox"
-            // onChange={handleCheckbox}
+            onChange={handleCheckbox}
             name="steel"
             id="steel"
           />
@@ -102,7 +102,7 @@ export const FilterBar = () => {
         <div className="group-type">
           <input
             type="checkbox"
-            // onChange={handleCheckbox}
+            onChange={handleCheckbox}
             name="dark"
             id="dark"
           />
@@ -111,7 +111,7 @@ export const FilterBar = () => {
         <div className="group-type">
           <input
             type="checkbox"
-            // onChange={handleCheckbox}
+            onChange={handleCheckbox}
             name="electric"
             id="electric"
           />
@@ -120,7 +120,7 @@ export const FilterBar = () => {
         <div className="group-type">
           <input
             type="checkbox"
-            // onChange={handleCheckbox}
+            onChange={handleCheckbox}
             name="fighting"
             id="fighting"
           />
@@ -129,7 +129,7 @@ export const FilterBar = () => {
         <div className="group-type">
           <input
             type="checkbox"
-            // onChange={handleCheckbox}
+            onChange={handleCheckbox}
             name="flying"
             id="flying"
           />
@@ -138,7 +138,7 @@ export const FilterBar = () => {
         <div className="group-type">
           <input
             type="checkbox"
-            // onChange={handleCheckbox}
+            onChange={handleCheckbox}
             name="ice"
             id="ice"
           />
@@ -147,7 +147,7 @@ export const FilterBar = () => {
         <div className="group-type">
           <input
             type="checkbox"
-            // onChange={handleCheckbox}
+            onChange={handleCheckbox}
             name="poison"
             id="poison"
           />
@@ -156,7 +156,7 @@ export const FilterBar = () => {
         <div className="group-type">
           <input
             type="checkbox"
-            // onChange={handleCheckbox}
+            onChange={handleCheckbox}
             name="rock"
             id="rock"
           />
@@ -165,7 +165,7 @@ export const FilterBar = () => {
         <div className="group-type">
           <input
             type="checkbox"
-            // onChange={handleCheckbox}
+            onChange={handleCheckbox}
             name="water"
             id="water"
           />

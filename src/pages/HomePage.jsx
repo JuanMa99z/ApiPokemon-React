@@ -6,7 +6,15 @@ export const HomePage = () => {
   const { OnclickLoadMore, active, setActive } = useContext(PokemonContext);
   return (
     <>
-      <div className="container-filter container">
+
+<div className="video-background">
+        <video autoPlay loop muted>
+          <source src="/src/assets/background-pokemon.webm" type="video/webm" />
+        </video>
+        <div className="gradient-overlay"></div>
+      </div>
+
+        <div className="container-filter container">
         <div className="icon-filter" onClick={() => setActive(!active)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +39,8 @@ export const HomePage = () => {
         <button className="btn-load-more" onClick={OnclickLoadMore}>
          <b>Cargar +</b>
         </button>
-      </div>
+      </div>     
+     
     </>
   );
 };
