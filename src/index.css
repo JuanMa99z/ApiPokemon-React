@@ -422,6 +422,7 @@ header form {
 	.container-filter {
 		display: flex;
 		justify-content: end;
+		z-index: 0;
 	}
 }
 
@@ -434,10 +435,10 @@ header form {
 	left: -300px;
 	width: 220px;
 	color: #000000;
-	background:#b7d6a955;
+	background:#d6fac555;
 	box-shadow:  2px 0 50px 1px #575454;
 	height: auto;
-	transition: all 0.3s linear;
+	transition: all 0.2s linear;
 	backdrop-filter: blur(0.4rem);
 	-webkit-backdrop-filter: blur(0.4rem);
 }
@@ -445,47 +446,40 @@ header form {
 .container-filters.active {
 	left: 0;
 	height: 100%;
+	z-index: 1;
 }
 
 .filter-by-type {
 	display: flex;
 	flex-direction: column;
-	gap: 18px;
+	padding-left: 2%;
 }
 
 .filter-by-type span {
 	font-weight: 700;
-	font-size: 20px;
-
-}
-
-.group-type {
-	display: flex;
-	gap: 10px;
-	margin-left: inherit;
-	transition: transform .2s;
-	text-shadow: 1px 4px 15px rgb(73, 73, 73);
-	font-weight: 500;
-	height: 100%;
+	font-size: 18px;
 	text-align: center;
+}
+
+.form-check{
+	transition: transform .2s;
+	text-shadow: 1px 4px 10px rgb(73, 73, 73);
+	font-weight: 600;
+	height: 100%;
 
 }
 
-.group-type:hover{
+.form-check:hover{
 	background-color: var(--color-primary);
 	color: #fff;
 	box-sizing: border-box;
-	border-radius: 3px 15px 15px 3px;
-	-ms-transform: scale(1.1); /* IE 9 */
-	-webkit-transform: scale(1.1); /* Safari 3-8 */
-	transform: scale(1.1); 
 }
 
 
-.group-type label {
+.form-check label {
 	cursor: pointer;
 }
-@media (max-width: 1024px) {
+/* @media (max-width: 1024px) {
 	.group-type label {
 		cursor: pointer;
 		margin-top: 1rem;
@@ -509,7 +503,7 @@ header form {
 		cursor: pointer;
 		margin-top: .1px;
 	}
-}
+} */
 
 /* 
 ======================================= 

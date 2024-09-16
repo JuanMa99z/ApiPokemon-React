@@ -104,6 +104,7 @@ export const PokemonProvider = ({ children }) => {
   const handleCheckbox = (e) => {
     const { name, checked } = e.target;
 
+
     setTypeSelected({
       ...typeSelected,
       [name]: checked,

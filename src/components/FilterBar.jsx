@@ -4,173 +4,52 @@ import { PokemonContext } from "../context/PokemonContext";
 export const FilterBar = () => {
   const { active, handleCheckbox } = useContext(PokemonContext);
 
+  const pokemonTypes = [
+    { name: "grass", label: "Planta" },
+    { name: "fire", label: "Fuego" },
+    { name: "bug", label: "Bicho" },
+    { name: "fairy", label: "Hada" },
+    { name: "dragon", label: "Dragón" },
+    { name: "shadow", label: "Fantasma" },
+    { name: "ground", label: "Tierra" },
+    { name: "normal", label: "Normal" },
+    { name: "psychic", label: "Psíquico" },
+    { name: "steel", label: "Acero" },
+    { name: "dark", label: "Siniestro" },
+    { name: "electric", label: "Eléctrico" },
+    { name: "fighting", label: "Lucha" },
+    { name: "flying", label: "Volador" },
+    { name: "ice", label: "Hielo" },
+    { name: "poison", label: "Veneno" },
+    { name: "rock", label: "Roca" },
+    { name: "water", label: "Agua" }
+  ];
+
   return (
     <div className={`container-filters ${active ? "active" : ""}`}>
       <div className="filter-by-type">
-        <span>Tipo</span>
-        <div className="group-type">
-          <input
-            type="checkbox"
-            onChange={handleCheckbox}
-            name="grass"
-            id="grass"
-          />
-          <label htmlFor="grass">Planta</label>
-        </div>
-        <div className="group-type">
-          <input
-            type="checkbox"
-            onChange={handleCheckbox}
-            name="fire"
-            id="fire"
-          />
-          <label htmlFor="fire">Fuego</label>
-        </div>
-        <div className="group-type">
-          <input
-            type="checkbox"
-            onChange={handleCheckbox}
-            name="bug"
-            id="bug"
-          />
-          <label htmlFor="bug">Bicho</label>
-        </div>
-        <div className="group-type">
-          <input
-            type="checkbox"
-            onChange={handleCheckbox}
-            name="fairy"
-            id="fairy"
-          />
-          <label htmlFor="fairy">Hada</label>
-        </div>
-        <div className="group-type">
-          <input
-            type="checkbox"
-            onChange={handleCheckbox}
-            name="dragon"
-            id="dragon"
-          />
-          <label htmlFor="dragon">Dragón</label>
-        </div>
-        <div className="group-type">
-          <input
-            type="checkbox"
-            onChange={handleCheckbox}
-            name="shadow"
-            id="shadow"
-          />
-          <label htmlFor="shadow">Fantasma</label>
-        </div>
-        <div className="group-type">
-          <input
-            type="checkbox"
-            onChange={handleCheckbox}
-            name="ground"
-            id="ground"
-          />
-          <label htmlFor="ground">Tierra</label>
-        </div>
-        <div className="group-type">
-          <input
-            type="checkbox"
-            onChange={handleCheckbox}
-            name="normal"
-            id="normal"
-          />
-          <label htmlFor="normal">Normal</label>
-        </div>
-        <div className="group-type">
-          <input
-            type="checkbox"
-            onChange={handleCheckbox}
-            name="psychic"
-            id="psychic"
-          />
-          <label htmlFor="psychic">Psíquico</label>
-        </div>
-        <div className="group-type">
-          <input
-            type="checkbox"
-            onChange={handleCheckbox}
-            name="steel"
-            id="steel"
-          />
-          <label htmlFor="steel">Acero</label>
-        </div>
-        <div className="group-type">
-          <input
-            type="checkbox"
-            onChange={handleCheckbox}
-            name="dark"
-            id="dark"
-          />
-          <label htmlFor="dark">Siniestro</label>
-        </div>
-        <div className="group-type">
-          <input
-            type="checkbox"
-            onChange={handleCheckbox}
-            name="electric"
-            id="electric"
-          />
-          <label htmlFor="electric">Eléctrico</label>
-        </div>
-        <div className="group-type">
-          <input
-            type="checkbox"
-            onChange={handleCheckbox}
-            name="fighting"
-            id="fighting"
-          />
-          <label htmlFor="fighting">Lucha</label>
-        </div>
-        <div className="group-type">
-          <input
-            type="checkbox"
-            onChange={handleCheckbox}
-            name="flying"
-            id="flying"
-          />
-          <label htmlFor="flying">Volador</label>
-        </div>
-        <div className="group-type">
-          <input
-            type="checkbox"
-            onChange={handleCheckbox}
-            name="ice"
-            id="ice"
-          />
-          <label htmlFor="ice">Hielo</label>
-        </div>
-        <div className="group-type">
-          <input
-            type="checkbox"
-            onChange={handleCheckbox}
-            name="poison"
-            id="poison"
-          />
-          <label htmlFor="poison">Veneno</label>
-        </div>
-        <div className="group-type">
-          <input
-            type="checkbox"
-            onChange={handleCheckbox}
-            name="rock"
-            id="rock"
-          />
-          <label htmlFor="rock">Roca</label>
-        </div>
-        <div className="group-type">
-          <input
-            type="checkbox"
-            onChange={handleCheckbox}
-            name="water"
-            id="water"
-          />
-          <label htmlFor="water">Agua</label>
+        <span className="h5">Tipo
+        </span>
+        <div className="row row-cols-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-1 ">
+          {pokemonTypes.map((type) => (
+            <div className="col mb-3" key={type.name}>
+              <div className="form-check">
+                <input
+                  type="checkbox"
+                  className="form-check-input"
+                  onChange={handleCheckbox}
+                  name={type.name}
+                  id={type.name}
+                />
+                <label className="form-check-label" htmlFor={type.name}>
+                  {type.label}
+                </label>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
+    
   );
 };
