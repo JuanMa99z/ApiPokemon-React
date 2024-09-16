@@ -32,6 +32,8 @@ export const PokemonPage = () => {
         <Loader />
       ) : (
         <>
+        
+          <div className="header-main-pokemon">
           <div className="video-background">
             <video autoPlay loop muted>
               <source
@@ -41,7 +43,6 @@ export const PokemonPage = () => {
             </video>
             <div className="gradient-overlay"></div>
           </div>
-          <div className="header-main-pokemon">
             <span className="number-pokemon">#{pokemon.id}</span>
             <div className="container-img-pokemon col-lg-6 col-md-6 col-sm-7">
               <img

@@ -20,7 +20,7 @@ export const SearchPage = () => {
           <source src="/src/assets/PokemonBackground-1.webm" type="video/webm" />
         </video>
         <div className="gradient-overlay"></div>
-      </div>
+      
 
       <p className="p-search">
         se encontraron <span>{filteredPokemon.length}</span> resultados:
@@ -30,6 +30,7 @@ export const SearchPage = () => {
           <CardPokemon pokemon={pokemon} key={pokemon.id} />
         ))}
       </div>
+    </div>
     </div>
   );
 };
