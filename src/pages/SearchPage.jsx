@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { PokemonContext } from "../context/PokemonContext";
 import { useLocation } from "react-router-dom";
 import { CardPokemon } from "../components/CardPokemon";
+import video from '../assets/PokemonBackground-1.webm'
 
 export const SearchPage = () => {
   const location = useLocation();
@@ -17,10 +18,10 @@ export const SearchPage = () => {
     <div className="container">
     <div className="video-background">
         <video autoPlay loop muted>
-          <source src="/src/assets/PokemonBackground-1.webm" type="video/webm" />
+          <source src={video} type="video/webm" />
         </video>
         <div className="gradient-overlay"></div>
-      
+         </div>
 
       <p className="p-search">
         se encontraron <span>{filteredPokemon.length}</span> resultados:
@@ -30,7 +31,7 @@ export const SearchPage = () => {
           <CardPokemon pokemon={pokemon} key={pokemon.id} />
         ))}
       </div>
-    </div>
+ 
     </div>
   );
 };
