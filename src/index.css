@@ -475,41 +475,9 @@ header form {
 	box-sizing: border-box;
 }
 
-
 .form-check label {
 	cursor: pointer;
 }
-/* @media (max-width: 1024px) {
-	.group-type label {
-		cursor: pointer;
-		margin-top: 1rem;
-	}
-}
-
-@media (max-width: 768px) {
-	.group-type label {
-		cursor: pointer;
-		margin-top: .4rem;
-	}
-}
-@media (max-width: 480px) {
-	.group-type label {
-		cursor: pointer;
-		margin-top: .1rem;
-	}
-}
-@media (max-width: 360px) {
-	.group-type label {
-		cursor: pointer;
-		margin-top: .1px;
-	}
-} */
-
-/* 
-======================================= 
-Styles of Pokemon Single Page
-======================================= 
-*/
 
 .main-pokemon {
 	display: flex;
