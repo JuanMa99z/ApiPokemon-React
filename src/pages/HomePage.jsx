@@ -8,7 +8,7 @@ export const HomePage = () => {
     <>
       <div className="video-background">
         <video autoPlay loop muted>
-          <source src="/src/assets/PokemonBackground-1.mp4" type="video/mp4" />
+          <source src="/src/assets/PokemonBackground-1.webm" type="video/webm" />
         </video>
         <div className="gradient-overlay"></div>
       </div>
