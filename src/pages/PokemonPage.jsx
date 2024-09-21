@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Loader } from "../components";
 import { PokemonContext } from "../context/PokemonContext";
 import { primerMayuscula } from "../helper/helper";
+import video from '../assets/PokemonBackground-2.webm'
 
 export const PokemonPage = () => {
   const { getPokemonByID } = useContext(PokemonContext);
@@ -37,7 +38,7 @@ export const PokemonPage = () => {
           <div className="video-background">
             <video autoPlay loop muted>
               <source
-                src="/src/assets/PokemonBackground-2.webm"
+                src={video}
                 type="video/webm"
               />
             </video>

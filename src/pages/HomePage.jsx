@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { FilterBar, PokemonList } from "../components";
 import { PokemonContext } from "../context/PokemonContext";
+import video from '../assets/PokemonBackground-1.webm'
 
 export const HomePage = () => {
   const { OnclickLoadMore, active, setActive } = useContext(PokemonContext);
@@ -8,7 +9,7 @@ export const HomePage = () => {
     <>
       <div className="video-background">
         <video autoPlay loop muted>
-          <source src="/src/assets/PokemonBackground-1.webm" type="video/webm" />
+          <source src={video} type="video/webm" />
         </video>
         <div className="gradient-overlay"></div>
       </div>
